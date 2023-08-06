@@ -10,5 +10,6 @@ spec:
     - name: spark
       port: 7077
       targetPort: 7077
+  type: LoadBalancer
   selector:
     component: spark-master

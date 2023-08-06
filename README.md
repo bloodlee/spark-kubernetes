@@ -34,8 +34,9 @@ Create the deployments and services:
 $ kubectl create -f ./kubernetes/spark-master-deployment.yaml
 $ kubectl create -f ./kubernetes/spark-master-service.yaml
 $ kubectl create -f ./kubernetes/spark-worker-deployment.yaml
-$ minikube addons enable ingress
-$ kubectl apply -f ./kubernetes/minikube-ingress.yaml
+$ #minikube addons enable ingress
+$ #kubectl apply -f ./kubernetes/minikube-ingress.yaml
+$ python spark-kubernetes/pi_example.py
 ```
 
 Add an entry to /etc/hosts:

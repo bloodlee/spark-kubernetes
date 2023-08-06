@@ -2,8 +2,8 @@
 FROM openjdk:11
 
 # define spark and hadoop versions
-ENV SPARK_VERSION=3.2.0
-ENV HADOOP_VERSION=3.3.1
+ENV SPARK_VERSION=3.2.1
+ENV HADOOP_VERSION=3.2.0
 
 # download and install hadoop
 RUN mkdir -p /opt && \
@@ -25,3 +25,8 @@ RUN mkdir -p /opt && \
 ADD common.sh spark-master spark-worker /
 ADD spark-defaults.conf /opt/spark/conf/spark-defaults.conf
 ENV PATH $PATH:/opt/spark/bin
+
+# install python modules
+RUN apt update && \ 
+    apt install python3-pip -y && \
+    pip3 install numpy==1.24.1 pandas==1.5.2 joblibspark==0.5.1 scikit-learn==1.2.0 pymongo==4.3.3

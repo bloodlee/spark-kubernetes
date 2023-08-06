@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: spark-worker
-          image: spark-hadoop:3.2.0
+          image: yli/spark-hadoop:3.2.1
           command: ["/spark-worker"]
           ports:
             - containerPort: 8081
